@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100..900&family=Nixie+One&display=swap" rel="stylesheet">
+
+    <title>Clock</title>
+</head>
+<body id="body">
+
+   
+
+    <section id="container">
+
+        <div >
+            <img id="imagenMostrada" src="" alt="" class="photo">
+            </div>
+    
+        <div>
+        <div id="number">
+            <span id= "hrs" class="numb">00</span>
+            <span id="colon">:</span>
+            <span id= "min" class="numb">00</span>
+            <span id="colon">:</span>
+            <span id= "sec" class="numb">00</span>
+        </div>
+        <h1>clock by R A O S</h1>
+        
+        
+    </div>
+    </section>
+
+    <div>
+
+      
+    </div>
+
+    <script>
+
+        setInterval(()=>{
+            let hrs = document.getElementById("hrs");
+            let min = document.getElementById("min");
+            let sec = document.getElementById("sec");
+
+            let currentTime = new Date();
+          
+
+
+            hrs.innerHTML = currentTime.getHours();
+            min.innerHTML = currentTime.getMinutes();
+            sec.innerHTML = currentTime.getSeconds();
+
+            console.log("Date: " + Date());
+            var seco = currentTime.getSeconds()
+            console.log("seco= " + seco);
+
+            if ( seco <= 10 )  {
+                console.log("image 1");
+                imagenMostrada.src ="images/min1.jpg";
+
+            } else if ( seco < 20) {
+                console.log("image 2")
+                imagenMostrada.src ="images/min2.jpg";
+
+            } else if ( seco < 30) {
+                console.log("image 3")
+                imagenMostrada.src ="images/min3.jpg";        
+
+            } else if ( seco < 40) { 
+                console.log("image 4")
+                imagenMostrada.src ="images/min4.jpg";   
+
+            } else if ( seco < 50) {
+                console.log("image 5")
+                imagenMostrada.src ="images/min5.jpg";   
+
+            } else if ( seco < 55) {
+                    console.log("image 6")
+                    imagenMostrada.src ="images/min6.jpg";        
+
+            } else if ( seco <= 60) {
+                console.log("image 7")
+                imagenMostrada.src ="images/min7.jpg";        
+                        
+            } else{
+                console.log("without data");
+            }
+
+
+        },1000);
+
+
+        
+        if ( currentTime.getSeconds < 10){
+
+            console.log("a");
+        } else if ( sec < 20000) {
+
+            console.log("<20>")
+        } else if ( sec < 30000) {
+
+            console.log("<30")        
+        } else if ( sec < 40000) {
+
+            console.log("<40")   
+                    
+
+        } else{
+            console.log("without data");
+        }
+
+
+
+
+    </script>
+</body>
+</html>
